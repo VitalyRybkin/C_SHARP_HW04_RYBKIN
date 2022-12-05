@@ -21,7 +21,7 @@ while (s != 0) {
     s /= 10;
 }
 
-Console.WriteLine(max_digit);
+Console.WriteLine($"Max digit in circle area of radius equals {get_string} is " + max_digit);
 
 
 string CheckInput (string get_string) {
