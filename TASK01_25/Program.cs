@@ -10,23 +10,21 @@ Console.Clear();
 Console.Write("Enter num to be powered: ");
 string get_string = CheckInput(Console.ReadLine() ?? String.Empty);
 int num = Convert.ToInt32(get_string);
+
 Console.Write("Enter power: ");
 get_string = CheckInput(Console.ReadLine() ?? String.Empty);
 int pow = Convert.ToInt32(get_string);
-double res = num;
 
-if (pow > 0) {
-    for (int i = 2; i <= pow; i ++) {
-        res = res * num;
-    }
-}
-else {
+if (pow > 0) Console.WriteLine($"{num} to the power of {pow} is " + FindPow (num, pow));
+else Console.WriteLine($"{num} to the power of {pow} is " + 1 / FindPow (num, pow));
+
+double FindPow (int num, int pow) {
+    double res = num;
     for (int i = 2; i <= Math.Abs(pow); i ++) {
         res = res * num;
     }
-    res = 1 / res;
+    return res;
 }
-Console.WriteLine($"{num} to the power of {pow} is " + res);
 
 string CheckInput (string get_string) {
     while (true) {
